@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 56" fill="none">
+  <!-- Architectural Studio Emblem -->
+  <g transform="translate(4, 4)">
+    <rect width="48" height="48" rx="4" fill="#181716"/>
+    <!-- Minimalist architectural lines -->
+    <path d="M12 36L24 12L36 36" stroke="#C5A059" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M17 26H31" stroke="#C5A059" stroke-width="2" stroke-linecap="round"/>
+    <circle cx="24" cy="20" r="1.5" fill="#E8D8B5"/>
+    <path d="M24 26V36" stroke="#C5A059" stroke-width="1.5" stroke-dasharray="2 2"/>
+  </g>
+  
+  <!-- Studio Typography -->
+  <text x="64" y="28" font-family="'Playfair Display', 'Cinzel', Georgia, serif" font-size="22" font-weight="700" letter-spacing="2" fill="#181716">
+    ANFA <tspan font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-weight="300" font-size="20" fill="#8F6B2E">INTERIOR</tspan>
+  </text>
+  <text x="66" y="42" font-family="'Plus Jakarta Sans', system-ui, sans-serif" font-size="8.5" font-weight="600" letter-spacing="3" fill="#716D68">
+    ARCHITECTURE &amp; BESPOKE INTERIORS • PCMC
+  </text>
+</svg>
