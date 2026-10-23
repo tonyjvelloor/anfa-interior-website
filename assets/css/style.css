@@ -1,6 +1,7 @@
 /* ==========================================================================
    ANFA INTERIOR — Architectural & Bespoke Interior Design
    Visual System for Pimpri Chinchwad, Moshi & Chikhali
+   Mobile-Optimized Touch Experience & Precision Woodworking Showcase
    ========================================================================== */
 
 :root {
@@ -27,6 +28,21 @@ html {
   color: var(--color-text-main);
   background-color: var(--bg-canvas);
   -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent body scroll when mobile menu or modal is open */
+body.mobile-nav-open {
+  overflow: hidden !important;
+  touch-action: none !important;
 }
 
 h1, h2, h3, .font-serif {
@@ -36,6 +52,15 @@ h1, h2, h3, .font-serif {
 
 p {
   text-wrap: pretty;
+}
+
+/* No-scrollbar utility for mobile horizontal swipe carousels & tabs */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Glass Header */
@@ -58,8 +83,10 @@ p {
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-image-frame:hover img {
-  transform: scale(1.03);
+@media (hover: hover) and (pointer: fine) {
+  .hero-image-frame:hover img {
+    transform: scale(1.03);
+  }
 }
 
 /* Before / After Split Slider */
@@ -69,6 +96,9 @@ p {
   border-radius: 12px;
   background-color: #181716;
   box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.1);
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .before-layer {
@@ -78,6 +108,12 @@ p {
   bottom: 0;
   overflow: hidden;
   border-right: 2px solid #FFFFFF;
+  pointer-events: none;
+}
+
+.before-layer img {
+  pointer-events: none;
+  user-select: none;
 }
 
 .slider-handle {
@@ -95,17 +131,18 @@ p {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #FFFFFF;
   color: #181716;
   font-weight: 700;
-  font-size: 13px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.35);
+  pointer-events: none;
 }
 
 /* Video Card Netflix-Style */
@@ -118,9 +155,11 @@ p {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.video-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 32px rgba(24, 23, 22, 0.1);
+@media (hover: hover) and (pointer: fine) {
+  .video-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px rgba(24, 23, 22, 0.1);
+  }
 }
 
 .play-badge {
@@ -138,51 +177,62 @@ p {
   justify-content: center;
   color: #FFFFFF;
   transition: all 0.2s ease-out;
+  cursor: pointer;
 }
 
-.video-card:hover .play-badge {
+@media (hover: hover) and (pointer: fine) {
+  .video-card:hover .play-badge {
+    background: #8F6B2E;
+    color: #FFFFFF;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
+}
+
+/* Touch active state for mobile cards */
+.video-card:active .play-badge {
+  transform: translate(-50%, -50%) scale(0.95);
   background: #8F6B2E;
-  color: #FFFFFF;
-  transform: translate(-50%, -50%) scale(1.08);
 }
 
-/* Calculator Tabs */
-.calc-option-btn {
-  background: #FFFFFF;
-  color: var(--color-text-main);
-  border: 1px solid var(--color-border);
-  transition: all 0.15s ease-out;
-}
-
-.calc-option-btn:hover {
-  border-color: var(--color-primary);
-}
-
-.calc-option-btn.active {
-  background: var(--color-primary);
-  color: #FFFFFF;
-  border-color: var(--color-primary);
-}
-
-/* Filter Tabs */
+/* Calculator & Filter Tabs */
+.calc-option-btn,
+.room-tab-btn,
 .filter-tab {
   background: #FFFFFF;
   color: var(--color-text-main);
   border: 1px solid var(--color-border);
   transition: all 0.15s ease-out;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.calc-option-btn:hover,
+.room-tab-btn:hover,
+.filter-tab:hover {
+  border-color: var(--color-primary);
+}
+
+.calc-option-btn.active,
+.room-tab-btn.active,
 .filter-tab.active {
   background: var(--color-primary);
   color: #FFFFFF;
   border-color: var(--color-primary);
 }
 
-/* Modal */
+/* Room tab specific styling */
+.room-tab-btn {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+/* Video Modal */
 .modal-overlay {
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.2s ease-out, visibility 0.2s ease-out;
+  transition: opacity 0.25s ease-out, visibility 0.25s ease-out;
 }
 
 .modal-overlay.open {
@@ -190,44 +240,93 @@ p {
   visibility: visible;
 }
 
-/* WhatsApp Floating Button */
+/* WhatsApp Floating Button (Desktop & Tablet) */
 .whatsapp-float {
   position: fixed;
-  bottom: 86px;
-  right: 24px;
+  bottom: 28px;
+  right: 28px;
   z-index: 40;
   background-color: #128C7E;
   color: #FFFFFF;
-  width: 52px;
-  height: 52px;
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(18, 140, 126, 0.35);
-  transition: transform 0.15s ease;
+  box-shadow: 0 8px 24px rgba(18, 140, 126, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .whatsapp-float:hover {
-  transform: scale(1.06);
+  transform: scale(1.08);
+  box-shadow: 0 10px 28px rgba(18, 140, 126, 0.5);
 }
 
 /* Mobile Sticky Bottom Bar */
 .mobile-bottom-bar {
   display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--color-border);
+  padding: 6px 10px;
+  padding-bottom: max(8px, env(safe-area-inset-bottom, 8px));
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
 }
 
+/* Responsive Breakpoints & Mobile Enhancements */
 @media (max-width: 768px) {
+  /* Show sticky bottom bar on mobile screens */
   .mobile-bottom-bar {
     display: flex;
   }
+
+  /* Prevent page content from being hidden behind sticky bottom bar & respect iPhone home indicator */
   body {
-    padding-bottom: 70px;
+    padding-bottom: calc(68px + env(safe-area-inset-bottom, 8px));
+  }
+
+  /* Prevent iOS Safari auto-zoom on input focus */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  /* Hide floating circular button on mobile to avoid overlapping the bottom bar and forms */
+  .whatsapp-float {
+    display: none !important;
+  }
+
+  /* Touch hit areas for navigation and interactive elements */
+  nav a,
+  .calc-option-btn,
+  .room-tab-btn,
+  .filter-tab {
+    min-height: 44px;
+  }
+
+  /* Ensure video modal close button has large touch hit area */
+  #closeVideoModal {
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-bottom-bar {
+    display: none !important;
   }
   .whatsapp-float {
-    bottom: 78px;
-    right: 16px;
-    width: 46px;
-    height: 46px;
+    display: flex;
   }
 }

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>ANFA Interior Pune | Turnkey Residential Interiors | Moshi, Chikhali &amp; PCMC</title>
   <meta name="description" content="ANFA Interior by Akhlaque Chaudhary. Turnkey home interiors &amp; modular kitchens across Moshi, Spine Road, Chikhali, Tathawade &amp; PCMC Pune. Watch real YouTube flat tours. 100% BWP Marine Ply. Direct contractor pricing.">
   <meta name="keywords" content="interior designer in moshi, interior designer in chikhali, turnkey interior designers pcmc, modular kitchen chikhali, 2bhk interior cost moshi, anfa interior, akhlaque chaudhary, kohinoor sapphire interior, swadesha building chikhali">
@@ -210,29 +210,43 @@
           </a>
         </div>
 
-        <button id="mobileMenuToggle" aria-label="Toggle Menu" class="lg:hidden p-2 text-stone-800">
+        <button id="mobileMenuToggle" aria-label="Toggle Menu" aria-expanded="false" class="lg:hidden p-2 text-stone-800 min-w-[44px] min-h-[44px] flex items-center justify-center">
           <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
           </svg>
         </button>
 
       </div>
     </div>
 
-    <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden lg:hidden bg-[#FAF8F5] border-b border-stone-200 px-6 py-6 space-y-3">
-      <a href="index.html" class="block py-2 text-stone-900 font-bold border-l-2 border-stone-900 pl-3">Home</a>
-      <a href="#youtubeShowcase" class="block py-2 text-red-700 font-bold pl-3">▶ Real YouTube Site Tours</a>
-      <a href="interior-designers-in-moshi.html" class="block py-2 text-stone-700 font-medium pl-3">Moshi Interiors</a>
-      <a href="interior-designers-in-chikhali.html" class="block py-2 text-stone-700 font-medium pl-3">Chikhali Workshop</a>
-      <a href="modular-kitchen-pcmc.html" class="block py-2 text-stone-700 font-medium pl-3">Modular Kitchens</a>
-      <a href="portfolio.html" class="block py-2 text-stone-700 font-medium pl-3">Completed Works &amp; Tours</a>
-      <a href="cost-calculator.html" class="block py-2 text-stone-700 font-medium pl-3">Interior Cost Calculator</a>
-      <a href="about-us.html" class="block py-2 text-stone-700 font-medium pl-3">About Founder &amp; Workshop</a>
-      <a href="contact.html" class="block py-2 text-stone-700 font-medium pl-3">Contact &amp; Map</a>
-      <div class="pt-4 border-t border-stone-200 flex flex-col gap-2">
-        <a href="tel:+917040208012" class="w-full text-center py-3 bg-stone-900 text-white rounded font-medium text-xs">
-          Call Founder (Akhlaque): 070402 08012
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-[#FAF8F5] border-b border-stone-200 px-5 py-5 space-y-1 shadow-lg max-h-[calc(100vh-80px)] overflow-y-auto">
+      <a href="index.html" class="flex items-center justify-between py-3 px-3 rounded text-stone-900 font-bold bg-stone-200/60">
+        <span>Home</span>
+        <span class="text-xs text-stone-500 font-mono">Current</span>
+      </a>
+      <a href="#youtubeShowcase" class="flex items-center justify-between py-3 px-3 rounded text-red-700 font-bold hover:bg-stone-100 transition">
+        <span class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+          <span>Real YouTube Site Tours</span>
+        </span>
+        <span class="text-xs bg-red-100 text-red-800 px-2 py-0.5 rounded font-mono">Watch</span>
+      </a>
+      <a href="interior-designers-in-moshi.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Moshi Interiors</a>
+      <a href="interior-designers-in-chikhali.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Chikhali Workshop</a>
+      <a href="modular-kitchen-pcmc.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Modular Kitchens</a>
+      <a href="portfolio.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Completed Works &amp; Tours</a>
+      <a href="cost-calculator.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Interior Cost Calculator</a>
+      <a href="about-us.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">About Founder &amp; Workshop</a>
+      <a href="contact.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Contact &amp; Map</a>
+      <div class="pt-4 border-t border-stone-200 flex flex-col gap-2.5">
+        <a href="tel:+917040208012" class="w-full text-center py-3.5 bg-stone-900 text-white rounded font-bold text-xs tracking-wide shadow-sm flex items-center justify-center gap-2">
+          <span>📞 Call Founder (Akhlaque): 070402 08012</span>
+        </a>
+        <a href="https://wa.me/917040208012?text=Hello%20Akhlaque%20bhai,%20I%20am%20interested%20in%20turnkey%20interior%20for%20my%20flat%20in%20PCMC." 
+           target="_blank" rel="noopener noreferrer" 
+           class="w-full text-center py-3.5 bg-emerald-600 text-white rounded font-bold text-xs tracking-wide shadow-sm flex items-center justify-center gap-2">
+          <span>💬 WhatsApp Consultation</span>
         </a>
       </div>
     </div>
@@ -254,16 +268,16 @@
             Direct Contractor Execution • Moshi &amp; Chikhali • PCMC Pune
           </div>
 
-          <h1 class="text-4xl sm:text-5xl lg:text-[52px] font-bold font-serif tracking-tight text-stone-900 leading-[1.12]">
+          <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-bold font-serif tracking-tight text-stone-900 leading-[1.14]">
             Authentic Pune Home Interiors. <span class="italic font-normal text-brass">Direct-From-Maker Execution.</span>
           </h1>
 
-          <p class="text-base sm:text-lg text-stone-700 leading-relaxed font-light">
+          <p class="text-sm sm:text-lg text-stone-700 leading-relaxed font-light">
             We don’t sell generic computer renders or charge a <strong>30% architect commission</strong>. Led by master craftsman <strong>Akhlaque Chaudhary</strong>, ANFA Interior directly executes complete modular woodwork, false ceilings, and turnkey interiors across <strong>Moshi, Chikhali, Spine Road, Tathawade &amp; PCMC</strong>. Watch our real on-site video walkthroughs on YouTube, and we bring authentic laminate catalogs and hardware samples right to your flat during your free site visit.
           </p>
 
           <!-- Core Genuine Proof Points -->
-          <div class="grid grid-cols-2 gap-y-3 gap-x-6 pt-2 text-xs sm:text-sm text-stone-800 border-t border-stone-200">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm text-stone-800 border-t border-stone-200">
             <div class="flex items-start gap-2.5">
               <span class="text-brass font-bold text-base leading-none">✔</span>
               <span><strong>Direct Contractor Pricing:</strong> Zero 30% middleman broker or agency markups.</span>
@@ -283,12 +297,12 @@
           </div>
 
           <!-- Action Buttons -->
-          <div class="pt-3 flex flex-wrap items-center gap-4">
-            <a href="#youtubeShowcase" class="px-6 py-3.5 rounded bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs tracking-wide transition shadow-sm flex items-center gap-2">
+          <div class="pt-3 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+            <a href="#youtubeShowcase" class="px-6 py-3.5 rounded bg-stone-900 hover:bg-stone-800 text-white font-bold text-xs tracking-wide transition shadow-sm flex items-center justify-center gap-2 min-h-[44px]">
               <span class="w-4 h-4 rounded-full bg-red-600 flex items-center justify-center text-[10px]">▶</span>
               <span>Watch Real Site Tours</span>
             </a>
-            <a href="#calculatorSection" class="px-5 py-3.5 rounded bg-white hover:bg-stone-100 text-stone-900 font-bold text-xs tracking-wide border border-stone-300 transition">
+            <a href="#calculatorSection" class="px-5 py-3.5 rounded bg-white hover:bg-stone-100 text-stone-900 font-bold text-xs tracking-wide border border-stone-300 transition text-center justify-center flex items-center min-h-[44px]">
               Calculate 1BHK / 2BHK Cost
             </a>
           </div>
@@ -862,19 +876,19 @@
       </div>
 
       <!-- Before & After Interactive Container -->
-      <div class="before-after-container relative h-[440px] sm:h-[520px] select-none cursor-ew-resize">
+      <div class="before-after-container relative h-[300px] sm:h-[460px] md:h-[520px] select-none cursor-ew-resize">
         
         <!-- AFTER Image (Underneath) -->
         <img src="assets/images/kohinoor-sapphire-walkthrough.jpg" alt="After: Completed Luxury Flat Kohinoor Sapphire" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute top-4 right-4 bg-stone-900/85 backdrop-blur px-3 py-1 rounded text-white text-xs font-semibold z-10">
-          After: Turnkey Handover Completed
+        <div class="absolute top-3 right-3 sm:top-4 sm:right-4 bg-stone-900/85 backdrop-blur px-2.5 py-1 rounded text-white text-[11px] sm:text-xs font-semibold z-10">
+          After: Handover Completed
         </div>
 
         <!-- BEFORE Layer (Overlaid with variable width) -->
         <div class="before-layer absolute inset-0 w-1/2 overflow-hidden z-20">
-          <img src="assets/images/site-work-pop-wiring.jpg" alt="Before: Live Site POP Framing & Wiring" class="absolute inset-0 w-full h-full object-cover max-w-none" style="width: 100%;">
-          <div class="absolute top-4 left-4 bg-stone-900/85 backdrop-blur px-3 py-1 rounded text-white text-xs font-semibold">
-            Before: Live Site POP Framing &amp; Wiring
+          <img src="assets/images/site-work-pop-wiring.jpg" alt="Before: Live Site POP Framing & Wiring" class="absolute inset-0 h-full object-cover max-w-none">
+          <div class="absolute top-3 left-3 sm:top-4 sm:left-4 bg-stone-900/85 backdrop-blur px-2.5 py-1 rounded text-white text-[11px] sm:text-xs font-semibold">
+            Before: Site POP &amp; Wiring
           </div>
         </div>
 
@@ -883,7 +897,7 @@
 
         <!-- Visual Handle -->
         <div class="slider-handle left-1/2">
-          <div class="handle-btn">
+          <div class="handle-btn" aria-hidden="true">
             ↔
           </div>
         </div>
@@ -916,18 +930,18 @@
         </p>
       </div>
 
-      <!-- Tab Buttons -->
-      <div class="flex flex-wrap gap-2.5 mb-8">
-        <button type="button" data-room="living" class="room-tab-btn active px-4 py-2.5 rounded text-xs font-bold border transition">
+      <!-- Tab Buttons (Horizontal Touch Swipe on Mobile) -->
+      <div class="flex overflow-x-auto no-scrollbar pb-2 sm:pb-0 sm:flex-wrap gap-2 sm:gap-2.5 mb-8 -mx-4 px-4 sm:mx-0 sm:px-0">
+        <button type="button" data-room="living" class="room-tab-btn active whitespace-nowrap px-4 py-2.5 rounded text-xs font-bold border transition shrink-0 min-h-[44px]">
           01. Living Room &amp; Entertainment
         </button>
-        <button type="button" data-room="kitchen" class="room-tab-btn px-4 py-2.5 rounded text-xs font-bold border transition">
+        <button type="button" data-room="kitchen" class="room-tab-btn whitespace-nowrap px-4 py-2.5 rounded text-xs font-bold border transition shrink-0 min-h-[44px]">
           02. Modular Kitchen Studio
         </button>
-        <button type="button" data-room="master" class="room-tab-btn px-4 py-2.5 rounded text-xs font-bold border transition">
+        <button type="button" data-room="master" class="room-tab-btn whitespace-nowrap px-4 py-2.5 rounded text-xs font-bold border transition shrink-0 min-h-[44px]">
           03. Master Bedroom &amp; Sliding Wardrobe
         </button>
-        <button type="button" data-room="mandir" class="room-tab-btn px-4 py-2.5 rounded text-xs font-bold border transition">
+        <button type="button" data-room="mandir" class="room-tab-btn whitespace-nowrap px-4 py-2.5 rounded text-xs font-bold border transition shrink-0 min-h-[44px]">
           04. Vastu Mandir &amp; Safety Door
         </button>
       </div>
@@ -1423,38 +1437,46 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Action -->
+  <!-- Floating WhatsApp Action (Desktop & Tablet) -->
   <a href="https://wa.me/917040208012?text=Hello%20Akhlaque%20bhai,%20I%20am%20interested%20in%20turnkey%20home%20interior%20for%20my%20flat%20in%20PCMC." 
-     target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Consultation" class="whatsapp-float">
+     target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Akhlaque Chaudhary" class="whatsapp-float">
     <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.587 1.761.884 2.791.884 3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.77-5.768-5.77zm0 10.453c-.927 0-1.637-.266-2.519-.809l-.18-.112-1.579.414.421-1.54-.118-.187c-.595-.947-.945-1.748-.945-2.853 0-2.617 2.13-4.747 4.748-4.747 2.617 0 4.747 2.13 4.747 4.747 0 2.618-2.13 4.747-4.747 4.747z"/></svg>
   </a>
 
-  <!-- Mobile Sticky Bar -->
-  <div class="mobile-bottom-bar fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-stone-200 px-3 py-2 justify-between items-center gap-2">
-    <a href="tel:+917040208012" class="flex-1 py-2.5 bg-stone-900 text-white rounded text-center font-semibold text-xs">
-      Call Akhlaque
+  <!-- Mobile Sticky Bottom Action Bar (Thumb-First Ergonomics) -->
+  <nav class="mobile-bottom-bar fixed bottom-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-t border-stone-200 px-2 py-1.5 flex items-center justify-between gap-1 shadow-lg" aria-label="Mobile Navigation">
+    <a href="tel:+917040208012" class="flex-1 flex flex-col items-center justify-center py-1 px-1 rounded text-stone-800 hover:bg-stone-100 active:bg-stone-200 transition text-center min-h-[44px]">
+      <svg class="w-4 h-4 mb-0.5 text-stone-800" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+      <span class="text-[10px] font-bold tracking-tight">Call</span>
     </a>
-    <a href="https://wa.me/917040208012?text=Hello%20Akhlaque%20bhai,%20I%20am%20interested%20in%20flat%20interiors." 
-       target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 bg-emerald-600 text-white rounded text-center font-semibold text-xs">
-      WhatsApp
+    <a href="https://wa.me/917040208012?text=Hello%20Akhlaque%20bhai,%20I%20am%20interested%20in%20flat%20interiors%20in%20PCMC." 
+       target="_blank" rel="noopener noreferrer" 
+       class="flex-[1.2] flex flex-col items-center justify-center py-1 px-2 rounded bg-emerald-600 text-white active:bg-emerald-700 transition text-center shadow-sm min-h-[44px]">
+      <svg class="w-4 h-4 mb-0.5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.587 1.761.884 2.791.884 3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.77-5.768-5.77zm0 10.453c-.927 0-1.637-.266-2.519-.809l-.18-.112-1.579.414.421-1.54-.118-.187c-.595-.947-.945-1.748-.945-2.853 0-2.617 2.13-4.747 4.748-4.747 2.617 0 4.747 2.13 4.747 4.747 0 2.618-2.13 4.747-4.747 4.747z"/></svg>
+      <span class="text-[10px] font-bold tracking-tight">WhatsApp</span>
     </a>
-    <a href="#youtubeShowcase" class="flex-1 py-2.5 bg-red-600 text-white rounded text-center font-semibold text-xs">
-      ▶ Video Tours
+    <a href="cost-calculator.html" class="flex-1 flex flex-col items-center justify-center py-1 px-1 rounded text-stone-800 hover:bg-stone-100 active:bg-stone-200 transition text-center min-h-[44px]">
+      <svg class="w-4 h-4 mb-0.5 text-brass" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"/></svg>
+      <span class="text-[10px] font-bold tracking-tight">Estimator</span>
     </a>
-  </div>
+    <a href="#youtubeShowcase" class="flex-1 flex flex-col items-center justify-center py-1 px-1 rounded text-stone-800 hover:bg-stone-100 active:bg-stone-200 transition text-center min-h-[44px]">
+      <svg class="w-4 h-4 mb-0.5 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      <span class="text-[10px] font-bold tracking-tight">Site Tours</span>
+    </a>
+  </nav>
 
-  <!-- Video Modal -->
-  <div id="videoModal" class="modal-overlay fixed inset-0 z-50 bg-stone-950/90 flex items-center justify-center p-4">
-    <div class="relative w-full max-w-4xl bg-stone-900 rounded-lg overflow-hidden border border-stone-700">
+  <!-- Video Modal (Responsive & Playsinline) -->
+  <div id="videoModal" class="modal-overlay fixed inset-0 z-50 bg-stone-950/90 flex items-center justify-center p-2 sm:p-4">
+    <div class="relative w-full max-w-4xl bg-stone-900 rounded-lg overflow-hidden border border-stone-700 shadow-2xl">
       <div class="flex items-center justify-between p-3.5 bg-stone-950 border-b border-stone-800 text-xs">
-        <div class="font-bold text-white flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
-          <span>ANFA Interior • Real Site Walkthrough (@anfainterior)</span>
+        <div class="font-bold text-white flex items-center gap-2 truncate pr-2">
+          <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse shrink-0"></span>
+          <span class="truncate">ANFA Interior • Real Site Walkthrough (@anfainterior)</span>
         </div>
-        <button id="closeVideoModal" aria-label="Close" class="text-stone-400 hover:text-white font-bold text-base px-2">✕</button>
+        <button id="closeVideoModal" aria-label="Close" class="text-stone-300 hover:text-white font-bold text-lg min-w-[44px] min-h-[44px] flex items-center justify-center shrink-0">✕</button>
       </div>
       <div class="relative aspect-video bg-black">
-        <iframe id="videoModalIframe" class="w-full h-full" src="" title="ANFA Interior Walkthrough" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <iframe id="videoModalIframe" class="w-full h-full" src="" title="ANFA Interior Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
       </div>
     </div>
   </div>

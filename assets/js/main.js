@@ -1,6 +1,7 @@
 /**
  * ANFA INTERIOR — Client Experience & Interactive Functions
- * Servicing Moshi, Chikhali, PCMC & Pune
+ * Mobile-Optimized for Moshi, Chikhali, PCMC & Pune
+ * Master Craftsman Akhlaque Chaudhary (070402 08012)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,25 +17,66 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* -------------------------------------------------------------
- * 1. Mobile Navigation
+ * 1. Mobile Navigation Drawer & Backdrop
  * ------------------------------------------------------------- */
 function initMobileNav() {
   const toggleBtn = document.getElementById('mobileMenuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   if (!toggleBtn || !mobileMenu) return;
 
-  toggleBtn.addEventListener('click', () => {
+  const hamburgerSvg = `
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  `;
+
+  const closeSvg = `
+    <svg class="w-6 h-6 text-stone-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+  `;
+
+  function setMenuState(open) {
+    if (open) {
+      mobileMenu.classList.remove('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      toggleBtn.innerHTML = closeSvg;
+      document.body.classList.add('mobile-nav-open');
+    } else {
+      mobileMenu.classList.add('hidden');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.innerHTML = hamburgerSvg;
+      document.body.classList.remove('mobile-nav-open');
+    }
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
     const isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
-    toggleBtn.setAttribute('aria-expanded', !isExpanded);
-    mobileMenu.classList.toggle('hidden');
+    setMenuState(!isExpanded);
   });
 
   const navLinks = mobileMenu.querySelectorAll('a');
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      toggleBtn.setAttribute('aria-expanded', 'false');
+      setMenuState(false);
     });
+  });
+
+  // Close when clicking outside of the mobile menu
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+      if (!mobileMenu.classList.contains('hidden')) {
+        setMenuState(false);
+      }
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+      setMenuState(false);
+    }
   });
 }
 
@@ -51,11 +93,11 @@ function initHeaderScroll() {
     } else {
       header.classList.remove('shadow-md');
     }
-  });
+  }, { passive: true });
 }
 
 /* -------------------------------------------------------------
- * 3. Before & After Transformation Slider
+ * 3. Before & After Transformation Split Slider (Touch-Friendly)
  * ------------------------------------------------------------- */
 function initBeforeAfterSlider() {
   const container = document.querySelector('.before-after-container');
@@ -63,39 +105,65 @@ function initBeforeAfterSlider() {
 
   const slider = container.querySelector('.before-after-slider');
   const beforeLayer = container.querySelector('.before-layer');
+  const beforeImg = beforeLayer ? beforeLayer.querySelector('img') : null;
   const handle = container.querySelector('.slider-handle');
 
   if (!slider || !beforeLayer || !handle) return;
 
-  function updateSlider(val) {
-    beforeLayer.style.width = `${val}%`;
-    handle.style.left = `${val}%`;
+  function syncImageWidth() {
+    if (beforeImg) {
+      beforeImg.style.width = `${container.offsetWidth}px`;
+      beforeImg.style.maxWidth = 'none';
+    }
   }
+
+  function updateSlider(val) {
+    const clamped = Math.max(0, Math.min(100, val));
+    beforeLayer.style.width = `${clamped}%`;
+    handle.style.left = `${clamped}%`;
+    slider.value = clamped;
+  }
+
+  syncImageWidth();
+  window.addEventListener('resize', syncImageWidth, { passive: true });
+  window.addEventListener('orientationchange', () => {
+    setTimeout(syncImageWidth, 150);
+  });
 
   slider.addEventListener('input', (e) => {
     updateSlider(e.target.value);
   });
 
-  // Touch and mouse drag support
+  // Smooth Touch & Mouse drag support
   let isDragging = false;
 
-  function handleMove(e) {
+  function getClientX(e) {
+    if (e.touches && e.touches.length > 0) return e.touches[0].clientX;
+    return e.clientX;
+  }
+
+  function handleDrag(e) {
     if (!isDragging) return;
     const rect = container.getBoundingClientRect();
-    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
-    let pos = ((clientX - rect.left) / rect.width) * 100;
-    pos = Math.max(0, Math.min(100, pos));
-    slider.value = pos;
+    const x = getClientX(e);
+    const pos = ((x - rect.left) / rect.width) * 100;
     updateSlider(pos);
   }
 
-  container.addEventListener('mousedown', () => isDragging = true);
-  window.addEventListener('mouseup', () => isDragging = false);
-  container.addEventListener('mousemove', handleMove);
+  container.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    handleDrag(e);
+  });
+  window.addEventListener('mousemove', handleDrag);
+  window.addEventListener('mouseup', () => { isDragging = false; });
 
-  container.addEventListener('touchstart', () => isDragging = true, { passive: true });
-  window.addEventListener('touchend', () => isDragging = false);
-  container.addEventListener('touchmove', handleMove, { passive: true });
+  container.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    handleDrag(e);
+  }, { passive: true });
+  window.addEventListener('touchmove', handleDrag, { passive: true });
+  window.addEventListener('touchend', () => { isDragging = false; });
+  window.addEventListener('touchcancel', () => { isDragging = false; });
 }
 
 /* -------------------------------------------------------------
@@ -272,7 +340,7 @@ function initCostCalculator() {
 }
 
 /* -------------------------------------------------------------
- * 6. Portfolio Filter Tabs
+ * 6. Portfolio Filter Tabs (Touch & Mobile Scroll Friendly)
  * ------------------------------------------------------------- */
 function initPortfolioFilter() {
   const filterTabs = document.querySelectorAll('.filter-tab');
@@ -299,7 +367,7 @@ function initPortfolioFilter() {
 }
 
 /* -------------------------------------------------------------
- * 7. YouTube Video Modal
+ * 7. YouTube Video Modal (Playsinline & Scroll Lock)
  * ------------------------------------------------------------- */
 function initVideoModal() {
   const modal = document.getElementById('videoModal');
@@ -309,23 +377,27 @@ function initVideoModal() {
 
   if (!modal || !iframe) return;
 
-  triggers.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const videoId = btn.getAttribute('data-video-id');
-      if (videoId) {
-        iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
-        modal.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-  });
+  function openModal(videoId) {
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0&playsinline=1`;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    document.body.style.touchAction = 'none';
+  }
 
   function closeModal() {
     modal.classList.remove('open');
     iframe.src = '';
     document.body.style.overflow = '';
+    document.body.style.touchAction = '';
   }
+
+  triggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const videoId = btn.getAttribute('data-video-id');
+      if (videoId) openModal(videoId);
+    });
+  });
 
   if (closeBtn) closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', (e) => {
@@ -382,13 +454,14 @@ function initQuoteForms() {
       const flatType = form.querySelector('[name="flat_type"]')?.value || '2 BHK';
       const requirements = form.querySelector('[name="requirements"]')?.value || 'Complete Interior Consultation';
 
-      if (!phone || phone.length < 10) {
-        alert('Please enter a valid 10-digit mobile number.');
+      const cleanedPhone = phone.replace(/[^0-9]/g, '');
+      if (cleanedPhone.length < 10) {
+        alert('Please enter a valid 10-digit mobile number so Akhlaque can contact you.');
         return;
       }
 
       const message = encodeURIComponent(
-        `Hello ANFA Interior Team! I would like to book an in-person site consultation:\n- Name: ${name}\n- Phone: ${phone}\n- Society / Area: ${location}\n- Configuration: ${flatType}\n- Scope: ${requirements}\nPlease let me know when you can visit my flat.`
+        `Hello ANFA Interior Team! I would like to book an in-person site consultation:\n- Name: ${name}\n- Phone: ${cleanedPhone}\n- Society / Area: ${location}\n- Configuration: ${flatType}\n- Scope: ${requirements}\nPlease let me know when you can visit my flat.`
       );
 
       const submitBtn = form.querySelector('button[type="submit"]');
@@ -401,7 +474,7 @@ function initQuoteForms() {
           submitBtn.innerHTML = originalText;
           submitBtn.disabled = false;
           form.reset();
-        }, 600);
+        }, 500);
       }
     });
   });
