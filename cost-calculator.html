@@ -47,6 +47,70 @@
     }
   </script>
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Schema.org Structured Data (AEO & Cost Estimator Tool) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://anfainterior.com/cost-calculator.html#app",
+        "name": "ANFA Interior Turnkey Flat Cost Estimator",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires JavaScript",
+        "description": "Interactive residential interior cost calculator for 1BHK, 2BHK, 3BHK flats and modular kitchens in Moshi, Chikhali, and PCMC Pune based on direct workshop carpentry rates."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://anfainterior.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Cost Estimator",
+            "item": "https://anfainterior.com/cost-calculator.html"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://anfainterior.com/cost-calculator.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does the ANFA Interior cost estimator calculate my flat budget?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The calculator uses direct workshop square-footage rates for woodwork, hardware, and finishes based on current Pune and PCMC timber prices, without sales commissions or designer broker fees."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I get an official itemized BOQ on WhatsApp?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "After selecting your flat size (1BHK/2BHK/3BHK) and finish grade, enter your name, 10-digit WhatsApp number, and society name. Founder Akhlaque Chaudhary will directly send the room-wise material specifications and BOQ breakdown to your WhatsApp."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Are there any hidden contractor charges or unexpected extras?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. ANFA Interior operates on a transparent contract. All hardware, transport, edge banding, and site installation are included in the signed BOQ with zero surprise extra charges."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-[#FAF8F5] text-stone-900 antialiased font-sans">
 
@@ -346,6 +410,15 @@
   <footer class="bg-stone-900 text-stone-400 text-xs py-10 border-t border-stone-800 text-center">
     <p>© 2026 ANFA Interior. Direct Contractor Pricing for Moshi, Chikhali &amp; PCMC, Pune.</p>
     <p class="mt-2 text-stone-500">Registered Office: Gat No. 696, Kudalwadi, Chikhali • Akhlaque Chaudhary (070402 08012)</p>
+    <div class="mt-4 flex flex-wrap justify-center items-center gap-3 text-[11px] text-stone-500">
+      <a href="sitemap.xml" class="hover:underline text-stone-400">XML Sitemap</a>
+      <span>·</span>
+      <a href="sitemap.html" class="hover:underline text-stone-400">HTML Sitemap</a>
+      <span>·</span>
+      <a href="pricing.md" class="hover:underline text-stone-400">AI Pricing Specs</a>
+      <span>·</span>
+      <a href="llms.txt" class="hover:underline text-stone-400">llms.txt</a>
+    </div>
   </footer>
 
   <!-- Floating WhatsApp Action (Desktop & Tablet) -->

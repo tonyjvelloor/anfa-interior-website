@@ -47,6 +47,42 @@
     }
   </script>
   <link rel="stylesheet" href="assets/css/style.css">
+  <!-- Schema.org Structured Data (CollectionPage & VideoGalleries) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://anfainterior.com/portfolio.html#portfolio",
+        "name": "ANFA Interior Completed Flat Projects & Video Walkthroughs",
+        "description": "On-site YouTube video tours and HD gallery of completed 1BHK, 2BHK, 3BHK flat interiors and modular kitchens in PCMC Pune.",
+        "publisher": {
+          "@type": "HomeAndConstructionBusiness",
+          "name": "ANFA Interior",
+          "url": "https://anfainterior.com/"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://anfainterior.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Portfolio & Project Tours",
+            "item": "https://anfainterior.com/portfolio.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="bg-[#FAF8F5] text-stone-900 antialiased font-sans">
 
@@ -376,6 +412,15 @@
   <footer class="bg-stone-900 text-stone-400 text-xs py-10 border-t border-stone-800 text-center">
     <p>© 2026 ANFA Interior. Portfolio &amp; Completed Works in PCMC Pune.</p>
     <p class="mt-2 text-stone-500">Akhlaque Chaudhary • 070402 08012</p>
+    <div class="mt-4 flex flex-wrap justify-center items-center gap-3 text-[11px] text-stone-500">
+      <a href="sitemap.xml" class="hover:underline text-stone-400">XML Sitemap</a>
+      <span>·</span>
+      <a href="sitemap.html" class="hover:underline text-stone-400">HTML Sitemap</a>
+      <span>·</span>
+      <a href="pricing.md" class="hover:underline text-stone-400">AI Pricing Specs</a>
+      <span>·</span>
+      <a href="llms.txt" class="hover:underline text-stone-400">llms.txt</a>
+    </div>
   </footer>
 
   <!-- Floating WhatsApp Action (Desktop & Tablet) -->

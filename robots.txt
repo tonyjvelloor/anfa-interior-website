@@ -1,4 +1,44 @@
+# Robots.txt for ANFA Interior (anfainterior.com / tonyjvelloor.github.io/anfa-interior-website)
+# All search crawlers and AI answer engines are welcome.
+
 User-agent: *
 Allow: /
 
+# Explicit AI Search & Generative Engine Allowances (AEO / GEO)
+User-agent: Googlebot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Machine-Readable Context for AI Agents & Search Engines
+# llms.txt standard: https://llmstxt.org
+Allow: /llms.txt
+Allow: /pricing.md
+Allow: /sitemap.xml
+Allow: /sitemap.html
+
+# Sitemaps
 Sitemap: https://anfainterior.com/sitemap.xml
+Sitemap: https://tonyjvelloor.github.io/anfa-interior-website/sitemap.xml
