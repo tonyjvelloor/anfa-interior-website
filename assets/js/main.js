@@ -182,28 +182,28 @@ function initRoomExplorer() {
   const roomData = {
     living: {
       title: 'Living Room & Entertainment Zone',
-      image: 'assets/images/modern-tv-unit-pcmc.jpg',
+      image: 'assets/images/modern-tv-unit-pcmc.webp',
       desc: 'The social centerpiece of your flat. Designed with acoustic fluted charcoal louvers, Italian Statuario marble PVC sheeting, floating console, and warm ambient profile lighting.',
       features: ['Concealed cabling & soundbar niche', 'Saint-Gobain false ceiling with cove light', 'Shoe credenza with louvered ventilation'],
       budget: '₹85,000 – ₹1,40,000'
     },
     kitchen: {
       title: 'Heavy Indian Modular Kitchen',
-      image: 'assets/images/modular-kitchen-structure.jpg',
+      image: 'assets/images/modular-kitchen-structure.webp',
       desc: 'Engineered for heavy Indian cooking. 100% IS:710 Boiling Waterproof Marine Plywood base and wall carcases, mirror-finish acrylic shutters, and German soft-close tandem drawers.',
       features: ['Hafele/Hettich 35kg tandem drawers', 'Granite / Quartz heat-resistant countertop', 'Dedicated thali, cutlery, spice pull-out & tall pantry'],
       budget: '₹1,20,000 – ₹2,20,000'
     },
     master: {
       title: 'Master Bedroom & Sliding Wardrobe',
-      image: 'assets/images/sliding-wardrobe-bedroom.jpg',
+      image: 'assets/images/sliding-wardrobe-bedroom.webp',
       desc: 'Floor-to-ceiling 9.5-ft sliding wardrobe with upper lofts for luggage, aluminum profile handles, king-size hydraulic storage bed, and illuminated dressing mirror.',
       features: ['Heavy-duty soft-close sliding wardrobe', 'Full-height loft storage for suitcases & quilts', 'Hydraulic bed storage & vanity mirror'],
       budget: '₹1,20,000 – ₹1,90,000'
     },
     mandir: {
       title: 'Vastu Mandir & Foyer Safety Door',
-      image: 'assets/images/mandir-tvunit-chikhali-sec16.jpg',
+      image: 'assets/images/mandir-tvunit-chikhali-sec16.webp',
       desc: 'Custom CNC laser-cut jali mandir unit with ambient backlighting, brass bell hooks, pooja storage drawers, and matching entrance safety door with ventilated shoe console.',
       features: ['Custom CNC laser-cut jali & OM motif', 'Dedicated storage for pooja samagri & agarbatti', 'Vastu-compliant northeast placement with warm LED'],
       budget: '₹35,000 – ₹65,000'
@@ -330,11 +330,77 @@ function initCostCalculator() {
 
     if (whatsappBtn) {
       const msg = encodeURIComponent(
-        `Hello ANFA Interior! I calculated an estimate on your website for:\n- Flat: ${configNames[config]}\n- Scope: ${scopeNames[scope]}\n- Finish: ${finishNames[finish]}\n- Estimated Budget: ₹${minPrice.toFixed(1)}L - ₹${maxPrice.toFixed(1)}L\nI'd like to book a free site consultation in Moshi/Chikhali/PCMC.`
+        `Hello Akhlaque Chaudhary (ANFA Interior)!\nI calculated an estimate on your website for:\n- Flat: ${configNames[config]}\n- Scope: ${scopeNames[scope]}\n- Finish: ${finishNames[finish]}\n- Estimated Budget: ₹${minPrice.toFixed(1)}L - ₹${maxPrice.toFixed(1)}L\nI'd like to book a free site consultation in Moshi/Chikhali/PCMC.`
       );
       whatsappBtn.href = `https://wa.me/917040208012?text=${msg}`;
     }
   }
+
+  // Handle "Get Detailed BOQ on WhatsApp" Lead Capture Form
+  const leadForms = document.querySelectorAll('.calc-lead-form');
+  leadForms.forEach(form => {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameInput = form.querySelector('[name="client_name"]');
+      const phoneInput = form.querySelector('[name="client_phone"]');
+      const locationInput = form.querySelector('[name="client_location"]');
+
+      const name = nameInput ? nameInput.value.trim() : 'Prospective Client';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const location = locationInput ? locationInput.value.trim() : 'PCMC Pune';
+
+      const cleanedPhone = phone.replace(/[^0-9]/g, '');
+      if (cleanedPhone.length < 10) {
+        alert('Please enter a valid 10-digit WhatsApp number so Akhlaque can share your BOQ.');
+        return;
+      }
+
+      const [minPrice, maxPrice] = pricingMatrix[config][scope][finish];
+      const configNames = { '1bhk': '1 BHK Flat', '2bhk': '2 BHK Flat', '3bhk': '3 BHK Flat', 'villa': 'Rowhouse / Villa' };
+      const scopeNames = { 'turnkey': 'Complete Turnkey', 'kitchen_only': 'Modular Kitchen Only', 'woodwork': 'Custom Woodwork & Furniture' };
+      const finishNames = { 'essential': 'Essential Grade (Commercial Ply)', 'premium': 'Premium Grade (BWP Marine Ply + Acrylic)', 'luxury': 'Ultra Luxury Grade (HDHMR + PU)' };
+
+      // Save lead locally in browser storage as backup
+      try {
+        const stored = JSON.parse(localStorage.getItem('anfa_calculator_leads') || '[]');
+        stored.push({
+          name,
+          phone: cleanedPhone,
+          location,
+          config: configNames[config],
+          scope: scopeNames[scope],
+          finish: finishNames[finish],
+          budget: `₹${minPrice.toFixed(1)}L - ₹${maxPrice.toFixed(1)}L`,
+          timestamp: new Date().toISOString()
+        });
+        localStorage.setItem('anfa_calculator_leads', JSON.stringify(stored));
+      } catch (err) {
+        console.warn('Storage:', err);
+      }
+
+      const boqMessage = encodeURIComponent(
+        `Hello Akhlaque Chaudhary (ANFA Interior)!\nI calculated my flat interior estimate on your website and would like the detailed itemized BOQ & material quotation:\n\n• Client Name: ${name}\n• WhatsApp: ${cleanedPhone}\n• Flat / Location: ${location}\n• Configuration: ${configNames[config]}\n• Work Scope: ${scopeNames[scope]}\n• Specification: ${finishNames[finish]}\n• Estimated Budget: ₹${minPrice.toFixed(1)} Lakh - ₹${maxPrice.toFixed(1)} Lakh\n\nPlease share the detailed BOQ breakdown sheet on WhatsApp and let me know when you can visit for site measurement.`
+      );
+
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const containerCard = form.closest('.calc-lead-container');
+      const successEl = containerCard ? containerCard.querySelector('.calc-lead-success') : null;
+
+      if (submitBtn) {
+        const origHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = `<span>Connecting to WhatsApp...</span>`;
+        submitBtn.disabled = true;
+
+        if (successEl) successEl.classList.remove('hidden');
+
+        setTimeout(() => {
+          window.open(`https://wa.me/917040208012?text=${boqMessage}`, '_blank');
+          submitBtn.innerHTML = origHtml;
+          submitBtn.disabled = false;
+        }, 500);
+      }
+    });
+  });
 
   updateCalculation();
 }
