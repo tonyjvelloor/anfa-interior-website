@@ -1,38 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- Home Page -->
   <url>
     <loc>https://anfainterior.com/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/kohinoor-sapphire-walkthrough.jpg</image:loc>
+      <image:title>Kohinoor Sapphire 3 Tathawade 2BHK Turnkey Interior Project</image:title>
+      <image:caption>Complete turnkey 2BHK interior execution by ANFA Interior featuring living room false ceiling, LED profile lighting, and modular furniture.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/swadesha-chikhali-project.jpg</image:loc>
+      <image:title>Swadesha Building Chikhali Living Room &amp; Modular Furniture</image:title>
+      <image:caption>Living room woodwork and custom sliding wardrobe at Swadesha Building, Chikhali PCMC.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/modular-kitchen-acrylic.jpg</image:loc>
+      <image:title>Acrylic Modular Kitchen with 100% BWP Marine Plywood in PCMC</image:title>
+      <image:caption>L-shape high-gloss acrylic modular kitchen manufactured in Kudalwadi workshop.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/logo.png</image:loc>
+      <image:title>ANFA Interior Official Brand Logo</image:title>
+      <image:caption>ANFA Interior turnkey residential joinery and contracting company logo.</image:caption>
+    </image:image>
   </url>
 
   <!-- High-Intent PCMC Locality Pages -->
   <url>
     <loc>https://anfainterior.com/interior-designers-in-moshi.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/swadesha-moshi-road-wip.jpg</image:loc>
+      <image:title>Moshi Road Flat Interior Execution by ANFA Interior</image:title>
+      <image:caption>Turnkey residential interior woodwork in Moshi, PCMC Pune.</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://anfainterior.com/interior-designers-in-chikhali.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/swadesha-chikhali-project.jpg</image:loc>
+      <image:title>Swadesha Building Chikhali Flat Interior</image:title>
+      <image:caption>Turnkey 2BHK flat interior in Chikhali executed by ANFA Interior.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/craftsman-plywood-cutting.jpg</image:loc>
+      <image:title>Plywood Cutting at Kudalwadi Chikhali Workshop</image:title>
+      <image:caption>Direct factory-floor joinery execution in Kudalwadi, Chikhali.</image:caption>
+    </image:image>
   </url>
+
   <url>
     <loc>https://anfainterior.com/modular-kitchen-pcmc.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/modular-kitchen-acrylic.jpg</image:loc>
+      <image:title>Custom Modular Kitchen in PCMC Pune</image:title>
+      <image:caption>High-gloss acrylic modular kitchen manufactured in 100% IS 710 BWP Marine Plywood.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/modular-kitchen-structure.jpg</image:loc>
+      <image:title>100% IS 710 BWP Marine Grade Plywood Kitchen Carcass</image:title>
+      <image:caption>Heavy-duty marine plywood modular kitchen base carcass assembly.</image:caption>
+    </image:image>
   </url>
 
   <!-- Interactive Cost Calculator & Lead Capture -->
   <url>
     <loc>https://anfainterior.com/cost-calculator.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -40,21 +87,42 @@
   <!-- Project Video Tours & Portfolio -->
   <url>
     <loc>https://anfainterior.com/portfolio.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/kohinoor-sapphire-walkthrough.jpg</image:loc>
+      <image:title>Kohinoor Sapphire 3 Tathawade 2BHK Walkthrough</image:title>
+      <image:caption>Real project tour of 2BHK flat interior in Tathawade, PCMC.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/mandir-tvunit-chikhali-sec16.jpg</image:loc>
+      <image:title>Chikhali Sector 16 Mandir and Modern TV Unit</image:title>
+      <image:caption>Custom CNC-cut backlit mandir and contemporary living room TV console.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/master-bedroom-design.jpg</image:loc>
+      <image:title>Master Bedroom Sliding Wardrobe and Headboard</image:title>
+      <image:caption>Master bedroom custom joinery with loft storage and cushioned headboard.</image:caption>
+    </image:image>
   </url>
 
   <!-- Company, Founder & Workshop Evidence -->
   <url>
     <loc>https://anfainterior.com/about-us.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://anfainterior.com/assets/images/craftsman-plywood-cutting.jpg</image:loc>
+      <image:title>In-House Woodworking Workshop at Kudalwadi Chikhali</image:title>
+      <image:caption>Akhlaque Chaudhary and craftsman team executing custom woodwork.</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://anfainterior.com/contact.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
@@ -62,7 +130,7 @@
   <!-- HTML Sitemap for Complete Crawlability -->
   <url>
     <loc>https://anfainterior.com/sitemap.html</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -70,13 +138,13 @@
   <!-- Machine-Readable AI Agent Context & Pricing (AEO / GEO) -->
   <url>
     <loc>https://anfainterior.com/pricing.md</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://anfainterior.com/llms.txt</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
