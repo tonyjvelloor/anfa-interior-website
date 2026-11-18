@@ -348,3 +348,149 @@ p {
     display: flex;
   }
 }
+
+/* ==========================================================================
+   2027 Architectural Craft Enhancements & Interactive Components
+   ========================================================================== */
+
+/* 2027 Possession Rate-Lock Pill */
+.rate-lock-pill {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FBF7EE 0%, #F4EBD7 100%);
+  border: 1px solid rgba(143, 107, 46, 0.45);
+  box-shadow: 0 2px 10px rgba(143, 107, 46, 0.08);
+}
+
+.rate-lock-pill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.65), transparent);
+  animation: shimmer-sweep 4.5s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes shimmer-sweep {
+  0%, 60% {
+    left: -100%;
+  }
+  100% {
+    left: 160%;
+  }
+}
+
+/* 2027 Direct Contractor vs Aggregator Comparison Matrix */
+.comparison-table-wrap {
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  background: #FFFFFF;
+  box-shadow: 0 18px 40px -18px rgba(24, 23, 22, 0.1);
+}
+
+.comparison-highlight-col {
+  background: linear-gradient(180deg, #1E1C1A 0%, #141312 100%);
+  color: #FAF8F5;
+  border-left: 2px solid #8F6B2E;
+  border-right: 2px solid #8F6B2E;
+  position: relative;
+}
+
+/* 2027 PCMC Possession Society Filter & Cards */
+.society-filter-btn {
+  background: #FFFFFF;
+  color: var(--color-text-main);
+  border: 1px solid var(--color-border);
+  transition: all 0.18s ease;
+  min-height: 40px;
+}
+
+.society-filter-btn:hover {
+  border-color: var(--color-primary);
+}
+
+.society-filter-btn.active {
+  background: var(--color-primary);
+  color: #FFFFFF;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(24, 23, 22, 0.15);
+}
+
+.society-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .society-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(143, 107, 46, 0.55);
+    box-shadow: 0 12px 24px -10px rgba(24, 23, 22, 0.1);
+  }
+}
+
+/* Calculator Live 2027 Room-by-Room Breakdown */
+.calc-breakdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.625rem;
+}
+
+@media (min-width: 640px) {
+  .calc-breakdown-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.calc-breakdown-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  padding: 0.65rem 0.75rem;
+  transition: border-color 0.2s ease;
+}
+
+.calc-breakdown-item:hover {
+  border-color: rgba(143, 107, 46, 0.6);
+}
+
+/* Printable 2027 Estimate View */
+@media print {
+  header,
+  .mobile-bottom-bar,
+  .whatsapp-float,
+  #videoModal,
+  .calc-lead-form,
+  #printEstimateBtn,
+  #calcWhatsAppBtn {
+    display: none !important;
+  }
+
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #interiorCalculator,
+  .calc-lead-container {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    border: 1px solid #333333 !important;
+    box-shadow: none !important;
+  }
+
+  .calc-lead-container .text-white,
+  .calc-lead-container .text-stone-300,
+  .calc-lead-container .text-stone-400 {
+    color: #181716 !important;
+  }
+
+  .calc-breakdown-item {
+    background: #FAF8F5 !important;
+    border: 1px solid #CCCCCC !important;
+    color: #000000 !important;
+  }
+}

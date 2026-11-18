@@ -1,16 +1,16 @@
-# ANFA Interior — Official Pricing & BOQ Specification Matrix (2026)
+# ANFA Interior — Official Pricing & BOQ Specification Matrix (2026–2027)
 
-> Direct workshop rates for turnkey residential interiors and modular kitchens in Moshi, Chikhali, Tathawade, and PCMC Pune. Published by founder Akhlaque Chaudhary.
+> Direct workshop rates for 2026–2027 flat possessions across Moshi, Chikhali, Tathawade, Punawale, Ravet, and PCMC Pune. Published by founder Akhlaque Chaudhary. See also the full [2027 Pune Interior Cost Guide](https://anfainterior.com/pune-interior-cost-guide-2027.html) and [Tathawade & Punawale Page](https://anfainterior.com/interior-designers-in-tathawade-punawale.html).
 
 ---
 
-## 1. Turnkey Flat Interior Packages (Pune & PCMC)
+## 1. Turnkey Flat Interior Packages (Pune & PCMC — 2027 Rate Card)
 
 | Package | Typical Flat Area | Price Range (Direct Workshop) | Aggregator Studio Average | You Save | Inclusions |
 |---|---|---|---|---|---|
 | **1BHK Turnkey Interior** | 450 – 580 sq.ft. | **₹2.8 Lakh – ₹4.2 Lakh** | ₹3.8L – ₹5.5L | 25% – 30% | Modular Kitchen (L/Parallel) + Master Sliding Wardrobe with Loft + Living Room TV Unit + False Ceiling with LED lights |
-| **2BHK Turnkey Interior** | 720 – 950 sq.ft. | **₹4.8 Lakh – ₹7.2 Lakh** | ₹6.5L – ₹9.5L | 25% – 32% | Full Modular Kitchen + Master Bedroom Sliding Wardrobe + Guest Bedroom Wardrobe + Designer TV Unit + POP/Gypsum False Ceiling + Asian Paints Royale Touch-up |
-| **3BHK Turnkey Interior** | 1,050 – 1,450 sq.ft. | **₹7.5 Lakh – ₹12.5 Lakh** | ₹10.5L – ₹16.0L | 28% – 35% | Modular Kitchen with Acrylic/PU + 3 Bedrooms Full Wardrobes with Lofts + Living Hall TV Console & Partition + Foyer Shoe Rack + Master Bed Headboard & Dressing + Full Flat Concealed Ambient Lighting |
+| **2BHK Turnkey Interior** | 720 – 950 sq.ft. | **₹4.8 Lakh – ₹7.2 Lakh** | ₹7.2L – ₹10.5L | 25% – 35% | Full Modular Kitchen + Master Bedroom Sliding Wardrobe + Guest Bedroom Wardrobe + Designer TV Unit + CNC Mandir + POP/Gypsum False Ceiling + Asian Paints Royale Paint |
+| **3BHK Turnkey Interior** | 1,050 – 1,450 sq.ft. | **₹7.5 Lakh – ₹12.5 Lakh** | ₹11.0L – ₹16.5L | 28% – 35% | Modular Kitchen with Acrylic/PU + 3 Bedrooms Full Wardrobes with Lofts + Living Hall TV Console & Partition + Foyer Shoe Rack + Master Bed Headboard & Dressing + Full Flat Concealed Ambient & Magnetic Track Lighting |
 
 ---
 
@@ -27,16 +27,25 @@
 
 ---
 
-## 3. Custom Carpentry Square Foot Rates (PCMC Direct Contractor)
+## 3. Custom Carpentry Square Foot Rates (PCMC 2027 Direct Contractor)
 
-| Item / Furniture Type | Standard Specification | Direct Workshop Rate (per sq.ft.) |
+| Item / Furniture Type | Standard Specification | Direct Workshop Rate (2027) |
 |---|---|---|
-| **Hinged Wardrobe with Loft** | Commercial MR Ply + 0.8mm Laminate | ₹1,150 – ₹1,350 / sq.ft. |
-| **Sliding Wardrobe with Loft** | IS 710 BWP Marine Ply + 1mm Merino Laminate + Heavy Slider Channels | ₹1,450 – ₹1,750 / sq.ft. |
-| **Modular Kitchen Base & Wall Cabinets** | 100% IS 710 Marine Plywood + 1mm High-Gloss/Acrylic Shutter | ₹1,600 – ₹2,200 / sq.ft. |
-| **Designer TV Unit Console** | Commercial Ply/HDHMR + Charcoal/Louvers + Backlit Quartz finish | ₹1,200 – ₹1,800 / sq.ft. |
-| **POP / Gypsum False Ceiling** | Saint-Gobain Gyproc Sheet + Channel Framework + Wiring | ₹110 – ₹145 / sq.ft. |
-| **Internal Wall Paint** | Asian Paints Tractor Emulsion to Royale Luxury Sheen | ₹25 – ₹45 / sq.ft. |
+| **Hinged Wardrobe with Loft** | Commercial MR Ply + 0.8mm/1mm Laminate | ₹1,250 – ₹1,450 / sq.ft. |
+| **Sliding Wardrobe with Loft** | IS 710 BWP Marine Ply / Calibrated MR + 1mm Merino Laminate + Heavy Slider Channels | ₹1,450 – ₹1,800 / sq.ft. |
+| **Modular Kitchen Base & Wall Cabinets** | 100% IS 710 Marine Plywood + 1mm High-Gloss/Anti-Fingerprint Acrylic | ₹1,650 – ₹2,250 / sq.ft. |
+| **Designer TV Unit Console** | Commercial Ply/HDHMR + Charcoal Fluted Louvers + Backlit Marble UV Finish | ₹1,250 – ₹1,850 / sq.ft. |
+| **Vastu CNC Jali Mandir Unit** | 18mm HDHMR / Acrylic CNC Jali + 3000K Backlight + Dual Storage Drawers | ₹28,000 – ₹55,000 / unit |
+| **POP / Gypsum False Ceiling** | Saint-Gobain Gyproc 12.5mm Board + Galvanized Channel Framework + Wiring Cutouts | ₹115 – ₹150 / sq.ft. |
+| **Internal Wall Paint** | Birla Putty + Primer + Asian Paints Royale Luxury Emulsion | ₹28 – ₹48 / sq.ft. |
+
+## 3B. Top Pune Interior Design Trends (2027)
+1. **Warm Champagne Brass & Fluted Charcoal Louver Accents** around TV & foyer feature walls.
+2. **Handleless G-Profile & Matte Anti-Fingerprint Acrylic Kitchens** in sage, cashmere, and teal tones.
+3. **Floor-to-Ceiling 9.5-ft Wardrobes with Tinted Fluted Glass** and warm sensor lighting.
+4. **Concealed COB & Magnetic Track Profile Lighting** replacing bulky tiered ceilings.
+5. **Space-Saving Hydraulic Storage Beds & Fold-Out WFH Study Niches** for Hinjewadi/Wakad IT couples.
+6. **Vastu-Compliant Floating Backlit CNC Mandirs** with hidden brass bell hooks & samagri drawers.
 
 ---
 

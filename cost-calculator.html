@@ -144,14 +144,16 @@
         <a href="index.html" class="flex items-center gap-3">
           <img src="assets/images/logo.webp" width="992" height="628" alt="ANFA Interior" class="h-12 sm:h-14 w-auto object-contain">
         </a>
-        <nav class="hidden lg:flex items-center gap-8 text-[13px] font-semibold tracking-wide text-stone-700">
+        <nav class="hidden lg:flex items-center gap-5 text-[12px] xl:text-[13px] font-semibold tracking-wide text-stone-700">
           <a href="index.html" class="hover:text-stone-900 transition">Home</a>
           <a href="interior-designers-in-moshi.html" class="hover:text-stone-900 transition">Moshi</a>
           <a href="interior-designers-in-chikhali.html" class="hover:text-stone-900 transition">Chikhali</a>
-          <a href="modular-kitchen-pcmc.html" class="hover:text-stone-900 transition">Modular Kitchens</a>
+          <a href="interior-designers-in-tathawade-punawale.html" class="hover:text-stone-900 transition whitespace-nowrap">Tathawade &amp; Punawale</a>
+          <a href="modular-kitchen-pcmc.html" class="hover:text-stone-900 transition">Kitchens</a>
+          <a href="pune-interior-cost-guide-2027.html" class="hover:text-stone-900 transition text-brass font-bold whitespace-nowrap">2027 Cost Guide</a>
           <a href="portfolio.html" class="hover:text-stone-900 transition">Portfolio</a>
-          <a href="cost-calculator.html" class="text-stone-900 border-b border-stone-900 pb-0.5">Cost Estimator</a>
-          <a href="about-us.html" class="hover:text-stone-900 transition">The Studio</a>
+          <a href="cost-calculator.html" class="text-stone-900 border-b border-stone-900 pb-0.5 whitespace-nowrap">Cost Estimator</a>
+          <a href="about-us.html" class="hover:text-stone-900 transition whitespace-nowrap">The Studio</a>
           <a href="contact.html" class="hover:text-stone-900 transition">Contact</a>
         </nav>
         <div class="hidden sm:flex items-center gap-3">
@@ -181,8 +183,13 @@
     <!-- Mobile Dropdown Menu -->
     <div id="mobileMenu" class="hidden lg:hidden bg-[#FAF8F5] border-b border-stone-200 px-5 py-5 space-y-1 shadow-lg max-h-[calc(100vh-80px)] overflow-y-auto">
       <a href="index.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Home</a>
+      <a href="pune-interior-cost-guide-2027.html" class="flex items-center justify-between py-3 px-3 rounded text-brass font-bold hover:bg-stone-100 transition">
+        <span>2027 Pune Interior Cost Guide</span>
+        <span class="text-[10px] bg-brass-light text-brass px-2 py-0.5 rounded font-bold uppercase">New 2027</span>
+      </a>
       <a href="interior-designers-in-moshi.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Moshi Interiors</a>
       <a href="interior-designers-in-chikhali.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Chikhali Interiors</a>
+      <a href="interior-designers-in-tathawade-punawale.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Tathawade &amp; Punawale</a>
       <a href="modular-kitchen-pcmc.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Modular Kitchens</a>
       <a href="portfolio.html" class="block py-3 px-3 rounded text-stone-700 font-medium hover:bg-stone-100 transition">Portfolio</a>
       <a href="cost-calculator.html" class="flex items-center justify-between py-3 px-3 rounded text-stone-900 font-bold bg-stone-200/60">
@@ -285,17 +292,17 @@
           <div class="grid grid-cols-1 sm:grid-cols-12 gap-6 items-center">
             
             <div class="sm:col-span-7 space-y-1.5">
-              <div class="text-[11px] uppercase tracking-wider text-brass font-bold">Estimated Cost (Direct Workshop Rates)</div>
+              <div class="text-[11px] uppercase tracking-wider text-brass font-bold">Estimated 2027 Cost (Direct Workshop Rates)</div>
               <div class="flex items-baseline gap-2 tabular-nums">
                 <span id="calcMinPrice" class="text-3xl sm:text-4xl font-serif font-bold text-white">₹5.2 Lakh</span>
                 <span class="text-stone-400 font-sans">to</span>
                 <span id="calcMaxPrice" class="text-3xl sm:text-4xl font-serif font-bold text-brass">₹6.8 Lakh</span>
               </div>
               <div id="calcSummaryText" class="text-xs text-stone-300">
-                2 BHK • Complete Turnkey • Premium Package in Moshi/Chikhali
+                2 BHK Flat • Complete Turnkey • Premium (BWP Marine Ply + Acrylic) (2027 Workshop Rate)
               </div>
               <div class="text-[11px] text-stone-400 flex items-center gap-4 pt-1">
-                <span>⏱ Timeline: <strong id="calcTimeline" class="text-white">35 - 45 Working Days</strong></span>
+                <span>⏱ Timeline: <strong id="calcTimeline" class="text-white">35 – 45 Working Days</strong></span>
                 <span>🛡 Warranty: <strong class="text-white">10 Years</strong></span>
               </div>
             </div>
@@ -306,11 +313,29 @@
                 <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.587 1.761.884 2.791.884 3.181 0 5.767-2.586 5.768-5.766.001-3.18-2.585-5.77-5.768-5.77zm0 10.453c-.927 0-1.637-.266-2.519-.809l-.18-.112-1.579.414.421-1.54-.118-.187c-.595-.947-.945-1.748-.945-2.853 0-2.617 2.13-4.747 4.748-4.747 2.617 0 4.747 2.13 4.747 4.747 0 2.618-2.13 4.747-4.747 4.747z"/></svg>
                 <span>Instant WhatsApp Estimate</span>
               </a>
-              <a href="contact.html" class="w-full text-center py-2.5 px-4 bg-stone-800 hover:bg-stone-700 text-stone-300 transition font-medium rounded text-xs border border-stone-700">
-                Book Free On-Site Measurement
+              <button type="button" id="printEstimateBtn"
+                      class="w-full text-center py-2.5 px-4 bg-stone-800 hover:bg-stone-700 text-stone-200 transition font-semibold rounded text-xs border border-stone-700 flex items-center justify-center gap-1.5">
+                <span>🖨</span>
+                <span>Save / Print 2027 Estimate</span>
+              </button>
+              <a href="contact.html" class="w-full text-center py-2 px-4 text-brass-light hover:text-white transition font-medium text-[11px] underline">
+                Or Book Free On-Site Measurement
               </a>
             </div>
 
+          </div>
+
+          <!-- Dynamic Live Room-by-Room 2027 Split -->
+          <div class="mt-5 pt-5 border-t border-stone-800">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-stone-300">
+                Live Room-by-Room 2027 Cost Breakdown
+              </div>
+              <a href="pune-interior-cost-guide-2027.html" class="text-[11px] text-brass-light hover:underline">
+                See Per-Sq-Ft 2027 Rate Card →
+              </a>
+            </div>
+            <div id="calcBreakdownGrid" class="calc-breakdown-grid"></div>
           </div>
 
           <!-- Lead Capture: Get Detailed BOQ & Material Breakdown on WhatsApp -->
@@ -434,9 +459,13 @@
     <a href="index.html" class="inline-block mb-3">
       <img src="assets/images/logo-light.webp" width="992" height="628" alt="ANFA Interior" class="h-10 w-auto mx-auto object-contain">
     </a>
-    <p>© 2026 ANFA Interior. Direct Contractor Pricing for Moshi, Chikhali &amp; PCMC, Pune.</p>
+    <p>© 2026–2027 ANFA Interior. Direct Contractor Pricing for Moshi, Chikhali, Tathawade &amp; PCMC, Pune.</p>
     <p class="mt-2 text-stone-500">Registered Office: Gat No. 696, Kudalwadi, Chikhali • Akhlaque Chaudhary (070402 08012)</p>
     <div class="mt-4 flex flex-wrap justify-center items-center gap-3 text-[11px] text-stone-500">
+      <a href="pune-interior-cost-guide-2027.html" class="hover:underline text-brass-light font-semibold">2027 Cost Guide</a>
+      <span>·</span>
+      <a href="interior-designers-in-tathawade-punawale.html" class="hover:underline text-stone-400">Tathawade &amp; Punawale</a>
+      <span>·</span>
       <a href="sitemap.xml" class="hover:underline text-stone-400">XML Sitemap</a>
       <span>·</span>
       <a href="sitemap.html" class="hover:underline text-stone-400">HTML Sitemap</a>

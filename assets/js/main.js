@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initBeforeAfterSlider();
   initRoomExplorer();
+  initSocietyExplorer();
   initCostCalculator();
   initPortfolioFilter();
   initVideoModal();
@@ -240,6 +241,33 @@ function initRoomExplorer() {
 }
 
 /* -------------------------------------------------------------
+ * 4B. 2027 PCMC Possession Society Filter Explorer
+ * ------------------------------------------------------------- */
+function initSocietyExplorer() {
+  const filterBtns = document.querySelectorAll('.society-filter-btn');
+  const societyCards = document.querySelectorAll('.society-card');
+  if (!filterBtns.length || !societyCards.length) return;
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const targetZone = btn.getAttribute('data-zone');
+
+      societyCards.forEach(card => {
+        const zones = (card.getAttribute('data-zone') || '').split(' ');
+        if (targetZone === 'all' || zones.includes(targetZone)) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+/* -------------------------------------------------------------
  * 5. Interactive Interior Cost Calculator
  * ------------------------------------------------------------- */
 function initCostCalculator() {
@@ -273,6 +301,25 @@ function initCostCalculator() {
     }
   };
 
+  const breakdownTemplates = {
+    turnkey: [
+      { label: 'Modular Kitchen (BWP)', share: 0.28 },
+      { label: 'Wardrobes & Lofts', share: 0.34 },
+      { label: 'TV Unit + POP Ceiling', share: 0.22 },
+      { label: 'Royale Paint & Site Fit', share: 0.16 }
+    ],
+    kitchen_only: [
+      { label: 'IS:710 Marine Carcasses', share: 0.45 },
+      { label: 'Shutters & Edge Banding', share: 0.30 },
+      { label: 'Hettich/Hafele Hardware', share: 0.25 }
+    ],
+    woodwork: [
+      { label: 'Bed Wardrobes & Lofts', share: 0.55 },
+      { label: 'TV Console & CNC Mandir', share: 0.25 },
+      { label: 'Hydraulic Beds & Shoe Unit', share: 0.20 }
+    ]
+  };
+
   setupButtonGroup('configOptions', (val) => {
     config = val;
     updateCalculation();
@@ -287,6 +334,21 @@ function initCostCalculator() {
     finish = val;
     updateCalculation();
   });
+
+  const printBtn = document.getElementById('printEstimateBtn');
+  if (printBtn) {
+    printBtn.addEventListener('click', () => {
+      window.print();
+    });
+  }
+
+  function formatBreakdownAmount(lakhsVal) {
+    if (lakhsVal >= 1) {
+      return `₹${lakhsVal.toFixed(2).replace(/\.00$/, '')}L`;
+    }
+    const thousands = Math.round(lakhsVal * 100);
+    return `₹${thousands}K`;
+  }
 
   function setupButtonGroup(containerId, callback) {
     const container = document.getElementById(containerId);
@@ -309,6 +371,7 @@ function initCostCalculator() {
     const timelineEl = document.getElementById('calcTimeline');
     const summaryEl = document.getElementById('calcSummaryText');
     const whatsappBtn = document.getElementById('calcWhatsAppBtn');
+    const breakdownGrid = document.getElementById('calcBreakdownGrid');
 
     if (minEl && maxEl) {
       minEl.textContent = `₹${minPrice.toFixed(1)} Lakh`;
@@ -325,12 +388,31 @@ function initCostCalculator() {
     const finishNames = { 'essential': 'Essential (Commercial Ply)', 'premium': 'Premium (BWP Marine Ply + Acrylic)', 'luxury': 'Luxury (HDHMR + PU / Glass)' };
 
     if (summaryEl) {
-      summaryEl.textContent = `${configNames[config]} • ${scopeNames[scope]} • ${finishNames[finish]}`;
+      summaryEl.textContent = `${configNames[config]} • ${scopeNames[scope]} • ${finishNames[finish]} (2027 Workshop Rate)`;
+    }
+
+    if (breakdownGrid) {
+      const items = breakdownTemplates[scope] || breakdownTemplates.turnkey;
+      breakdownGrid.style.gridTemplateColumns = items.length === 3 ? 'repeat(auto-fit, minmax(150px, 1fr))' : '';
+      breakdownGrid.innerHTML = items.map(item => {
+        const partMin = formatBreakdownAmount(minPrice * item.share);
+        const partMax = formatBreakdownAmount(maxPrice * item.share);
+        const pct = Math.round(item.share * 100);
+        return `
+          <div class="calc-breakdown-item">
+            <div class="flex items-center justify-between text-[10px] text-stone-400">
+              <span class="truncate pr-1">${item.label}</span>
+              <span class="text-brass font-mono font-bold">${pct}%</span>
+            </div>
+            <div class="text-xs sm:text-sm font-bold text-white mt-1 tabular-nums">${partMin} – ${partMax}</div>
+          </div>
+        `;
+      }).join('');
     }
 
     if (whatsappBtn) {
       const msg = encodeURIComponent(
-        `Hello Akhlaque Chaudhary (ANFA Interior)!\nI calculated an estimate on your website for:\n- Flat: ${configNames[config]}\n- Scope: ${scopeNames[scope]}\n- Finish: ${finishNames[finish]}\n- Estimated Budget: ₹${minPrice.toFixed(1)}L - ₹${maxPrice.toFixed(1)}L\nI'd like to book a free site consultation in Moshi/Chikhali/PCMC.`
+        `Hello Akhlaque Chaudhary (ANFA Interior)!\nI calculated a 2027 estimate on your website for:\n- Flat: ${configNames[config]}\n- Scope: ${scopeNames[scope]}\n- Finish: ${finishNames[finish]}\n- Estimated Budget: ₹${minPrice.toFixed(1)}L - ₹${maxPrice.toFixed(1)}L\nI'd like to lock 2027 workshop rates and book a free site consultation in PCMC.`
       );
       whatsappBtn.href = `https://wa.me/917040208012?text=${msg}`;
     }
